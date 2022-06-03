@@ -1,0 +1,25 @@
+.add_favorite {
+  height: 100vh;
+  width: 100vh;
+  position: relative;
+  &-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+
+    svg {
+      color: rgb(50, 12, 186);
+      transition: all 1s ease-in-out;
+      font-size: 1rem;
+
+      &:hover {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

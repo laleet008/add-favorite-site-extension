@@ -1,27 +1,36 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { RiCloseLine } from 'react-icons/ri';
-import { useState } from 'react';
 import './Form.scss';
 
-const Form = ({ setIsOpen }) => {
-  const [inputs, setInputs] = useState({});
+const Form = ({
+  setIsOpen,
+  favorite,
+  setFavorite,
+  setFavoriteName,
+  favoriteName,
+  imageIcon,
+  setImageIcon,
+  handleAdd,
+}) => {
+  // const inputRef = useRef(null);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(inputs);
-  };
+  // const handleChange = (event) => {
+  //   const name = event.target.name;
+  //   const value = event.target.value;
+  //   setInputs((values) => ({ ...values, [name]: value }));
+  // };
 
   return (
     <>
       <div className="dark_background" onClick={() => setIsOpen(false)} />
       <div className="modal">
-        <form className="form" onSubmit={handleSubmit}>
+        <form
+          className="form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleAdd();
+          }}
+        >
           <div className="form_header">
             <h2 className="form_header-heading">Add Your Favorite Site</h2>
           </div>
@@ -31,21 +40,40 @@ const Form = ({ setIsOpen }) => {
               <label>Enter Url:</label>
               <input
                 type="text"
-                name="url"
-                value={inputs.url || ''}
-                onChange={handleChange}
+                name="enterUrl"
+                // ref={inputRef}
+                value={favorite}
+                placeholder="https://www.google.com"
+                onChange={(e) => setFavorite(e.target.value)}
               />
             </div>
             <div className="form_content_input">
               <label>Enter website Name:</label>
               <input
                 type="text"
-                name="website"
-                value={inputs.website || ''}
-                onChange={handleChange}
+                // ref={inputRef}
+                name="websiteName"
+                placeholder="google"
+                value={favoriteName}
+                onChange={(e) => setFavoriteName(e.target.value)}
               />
             </div>
-            <input type="submit" className="submit_btn" />
+            <div className="form_content_input">
+              <label>Icon Url:</label>
+              <input
+                type="text"
+                name="enterUrl"
+                // ref={inputRef}
+                value={imageIcon}
+                placeholder="https://mages.unsplash.com/photo"
+                onChange={(e) => setImageIcon(e.target.value)}
+              />
+            </div>
+
+            <button type="submit" className="submit_btn">
+              Submit
+            </button>
+
             <button className="close_btn" onClick={() => setIsOpen(false)}>
               <RiCloseLine style={{ marginBottom: '-3px' }} />
             </button>

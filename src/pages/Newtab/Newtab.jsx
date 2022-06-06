@@ -40,7 +40,6 @@ const Newtab = () => {
   }, []);
 
   useEffect(() => {
-    // localStorage.setItem('favorites', JSON.stringify(favorites));
     window.localStorage.setItem('favorites_data', JSON.stringify(favorites));
   }, [favorites]);
 

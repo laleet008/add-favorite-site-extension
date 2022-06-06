@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaPlus } from 'react-icons/fa';
-import Form from './Form';
 import './AddFavorite.scss';
 
 const AddFavorite = () => {

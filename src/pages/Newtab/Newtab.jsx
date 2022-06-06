@@ -7,15 +7,6 @@ import './Newtab.scss';
 import Form from './components/Form';
 import FavoriteList from './components/FavoriteList';
 
-// const getLocalItems = () => {
-//   let favorite = localStorage.getItem('favorites');
-//   console.log(favorite);
-
-//   if (favorite) {
-//     return JSON.stringify(localStorage.getItem('favorites'));
-//   }
-// };
-
 const Newtab = () => {
   const [isOpen, setIsOpen] = useState(false);
 

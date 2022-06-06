@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import defaultImage from '../assets/default-icon.png';
 import './SingleFavorite.scss';
 import { RiCloseLine } from 'react-icons/ri';
@@ -8,7 +8,6 @@ const SingleFavorite = ({ favorites, favorite, setFavorites }) => {
     if (favorite.imageIcon) {
       return favorite.imageIcon;
     } else {
-      // return 'https://www.pngitem.com/pimgs/m/42-424891_no-image-available-icon-png-transparent-png.png';
       return defaultImage;
     }
   };
@@ -23,9 +22,6 @@ const SingleFavorite = ({ favorites, favorite, setFavorites }) => {
     <div className="favorite__single">
       <a target="_blank" href={favorite.favorite} rel="noreferrer">
         <img
-          // src={`${favorite.imageIcon !== null} ? ${
-          //   favorite?.imageIcon
-          // } : '../assets/default-icon.png' `}
           src={checkImageIconUrl()}
           alt={favorite.name}
           className="favorite__single-img"

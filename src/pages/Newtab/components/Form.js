@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { RiCloseLine } from 'react-icons/ri';
 import './Form.scss';
 
@@ -12,14 +12,6 @@ const Form = ({
   setImageIcon,
   handleAdd,
 }) => {
-  // const inputRef = useRef(null);
-
-  // const handleChange = (event) => {
-  //   const name = event.target.name;
-  //   const value = event.target.value;
-  //   setInputs((values) => ({ ...values, [name]: value }));
-  // };
-
   return (
     <>
       <div className="dark_background" onClick={() => setIsOpen(false)} />
@@ -41,7 +33,6 @@ const Form = ({
               <input
                 type="text"
                 name="enterUrl"
-                // ref={inputRef}
                 value={favorite}
                 placeholder="https://www.google.com"
                 onChange={(e) => setFavorite(e.target.value)}
@@ -51,7 +42,6 @@ const Form = ({
               <label>Enter website Name:</label>
               <input
                 type="text"
-                // ref={inputRef}
                 name="websiteName"
                 placeholder="google"
                 value={favoriteName}
@@ -63,7 +53,6 @@ const Form = ({
               <input
                 type="text"
                 name="enterUrl"
-                // ref={inputRef}
                 value={imageIcon}
                 placeholder="https://mages.unsplash.com/photo"
                 onChange={(e) => setImageIcon(e.target.value)}
